@@ -1,0 +1,50 @@
+<div class="container-flex text-center" style="max-width: 100% !important; max-height: 100% !important; width: 100% !important; height: 100% !important; position: absolute;">
+    <div class="row" style="max-width: 100% !important; max-height: 100% !important; width: 100% !important; height: 100% !important; position: absolute;">
+      <div class="col-sm-2 d-flex justify-content-center" style="background-color: #dbd7db2d;">
+        
+        <ul class="list-group list-group-flush mt-3 d-flex justify-content-center" style="background-color: transparent;">
+            <li class="list-group-item d-flex" style="background-color: transparent;" *ngFor="let a of datas.personne"> 
+                <div>
+                    <img class="rounded-circle" src="{{a.photo}}" alt="" width="80" height="80">
+                </div>
+                <div class="ps-3 d-flex align-items-center fs-4">
+                    {{a.nom}}
+                </div>
+            </li>
+        </ul>
+      </div>
+      <div  data-spy="scroll" class="col p-0">
+       
+            <full-calendar   [options]="calendarOptions"></full-calendar>
+
+      </div>
+    </div>
+</div>
+
+<div   class="modal"  tabindex="-1"   role="dialog"   [ngStyle]="{'display':displayStyle}" style="background-color: rgba(0,0,0,0.2);"> 
+  <div class="modal-dialog modal-dialog-centered" role="document"> 
+    <div class="modal-content"> 
+      <div class="modal-header"> 
+        <h4 class="modal-title">Mission</h4> 
+      </div> 
+      <div class="modal-body"> 
+
+        <p class="fs-4">{{currentName }} </p>
+        <p class="fs-4"><b>{{currentTitle }}</b> </p>
+        <p class="fs-5">{{currentStart }} </p>
+        <p class="fs-5">{{currentend }} </p>
+        <p class="fs-5">{{currentDescription }} </p>
+  
+      </div> 
+      <div class="modal-footer"> 
+        <a class="btn btn-danger" style="color: #fff !important;" (click)="supprimer(currentId)"> Supprimer </a>
+        <a class="btn btn-primary" style="color: #fff !important;" [routerLink]="'/mission/'+currentId"> Modifier </a>
+        <a class="btn btn-info" style="color: #000 !important;" [routerLink]="'/mission'"> Nouvelle mission </a>
+        <button type="button" class="btn btn-secondary" 
+                (click)="closePopup()"> 
+          Close 
+        </button> 
+      </div> 
+    </div> 
+  </div> 
+</div>

@@ -1,0 +1,64 @@
+<form class="p-5 rounded" [formGroup]="events_form" (ngSubmit)="onSubmit()" style="background-color: #dbd7db2d;">
+    <h1 class="text-center pt-5 pb-5">
+        NOUVELLE MISSION
+    </h1>
+    <div class="m-5">
+        <div class="mb-3 row">
+            <label for="pers" class="col-sm-2 col-form-label">Personne</label>
+            <div class="col-sm-10 d-flex">
+                <select class="form-select" aria-label="Default select example" id="pers" formControlName="personne">
+                    <option value="1">Jeanne Marie</option>
+                    <option value="2">Jean Luc</option>
+                    <option value="3">Alexia Fer</option>
+                    <option value="4">Jean Petit</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="titre" class="col-sm-2 col-form-label">Titre</label>
+            <div class="col-sm-10 d-flex">
+                <input type="text" class="form-control" id="titre" formControlName="titre" required>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-sm-12 d-flex justify-content-between">
+                <div>
+                    <label for="exampleColorInput" class="form-label">Couleur</label>
+                </div>
+                <div>
+                    <input type="color" class="form-control form-control-color" id="exampleColorInput"
+                        formControlName="couleur" value="#712cf9">
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="titre" class="col-sm-2 col-form-label">Début</label>
+            <div class="col-sm-10 d-flex">
+                <input type="datetime-local" class="form-control" id="titre" formControlName="debut" required>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="titre" class="col-sm-2 col-form-label">Fin</label>
+            <div class="col-sm-10 d-flex">
+                <input type="datetime-local" class="form-control" id="titre" formControlName="fin" required>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="desc" class="col-sm-2 col-form-label">Déscription</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="desc" rows="3" formControlName="description"></textarea>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-sm-12 d-flex justify-content-end">
+                <button type="button" class="btn btn-primary" (click)="onSubmit()">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+</form>
