@@ -3,6 +3,13 @@
       <div class="col-sm-2 d-flex justify-content-center" style="background-color: #dbd7db2d;">
         
         <ul class="list-group list-group-flush mt-3 d-flex justify-content-center" style="background-color: transparent;">
+              <li class="list-group-item d-flex justify-content-center" style="background-color: transparent;"> 
+                <div class="text-center d-flex justify-content-center">
+                    <a class="btn btn-primary" [routerLink]="'/mission'">
+                      <span style="color :#fff">Nouvelle mission</span>
+                    </a>
+                </div>
+            </li>
             <li class="list-group-item d-flex" style="background-color: transparent;" *ngFor="let a of datas.personne"> 
                 <div>
                     <img class="rounded-circle" src="{{a.photo}}" alt="" width="80" height="80">
